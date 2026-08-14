@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raízes que Curam — Saberes ancestrais da natureza</title>
+<meta name="description" content="Raízes que Curam: rede viva de guardiãs e multiplicadoras de saberes tradicionais sobre plantas medicinais, hortos agroecológicos e regeneração de territórios no Espírito Santo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --maroon: #3D160B;
+    --rust: #8B3A0E;
+    --terracotta: #C1541A;
+    --forest-dark: #16301C;
+    --forest: #2E4A26;
+    --olive: #6B7233;
+    --cream: #F8F1E4;
+    --cream-2: #F1E6D2;
+    --ink: #2A1D14;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Karla', sans-serif;
+    line-height: 1.65;
+  }
+  h1, h2, h3, .brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    margin: 0 0 0.5em;
+    color: var(--forest-dark);
+  }
+  a { color: var(--rust); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--olive);
+  }
+
+  header.site {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; }
+  header.site img { height: 46px; display: block; }
+  nav.site a {
+    color: var(--forest-dark);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 26px;
+    font-size: 0.95rem;
+  }
+  nav.site a:hover { color: var(--terracotta); }
+  nav.site { display: none; }
+  @media (min-width: 760px) { nav.site { display: block; } }
+
+  .hero {
+    position: relative;
+    padding: 110px 0 100px;
+    overflow: hidden;
+    color: #fff;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(22,48,28,0.72) 0%, rgba(22,48,28,0.86) 55%, var(--cream) 100%), url('images/hero-natureza.jpg') center 30%/cover no-repeat;
+    z-index: -1;
+  }
+  .hero .wrap { text-align: center; }
+  .hero .eyebrow { color: #E4D9B8; }
+  .hero h1 {
+    color: #fff;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.15;
+    margin: 0.3em 0 0.4em;
+  }
+  .hero p.lead {
+    max-width: 640px;
+    margin: 0 auto 2em;
+    font-size: 1.15rem;
+    color: #F1E9D6;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: var(--terracotta);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    transition: background 0.2s ease;
+  }
+  .btn:hover { background: var(--rust); }
+  .btn.ghost {
+    background: transparent;
+    border: 1.5px solid rgba(255,255,255,0.7);
+    margin-left: 14px;
+  }
+  .btn.ghost:hover { background: rgba(255,255,255,0.12); }
+
+  section { padding: 84px 0; }
+  section.alt { background: var(--cream-2); }
+  .section-head { text-align: center; max-width: 680px; margin: 0 auto 56px; }
+  .section-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); }
+  .section-head p { color: #4A392B; font-size: 1.05rem; }
+
+  .quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+    color: var(--forest-dark);
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  .quote span { color: var(--terracotta); font-style: normal; }
+
+  .grid5 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 28px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-top: 3px solid var(--terracotta);
+    border-radius: 6px;
+    padding: 28px 24px;
+  }
+  .card:nth-child(2) { border-top-color: var(--olive); }
+  .card:nth-child(3) { border-top-color: var(--forest); }
+  .card:nth-child(4) { border-top-color: var(--rust); }
+  .card:nth-child(5) { border-top-color: var(--forest-dark); }
+  .card .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--terracotta);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .card h3 { font-size: 1.12rem; margin-bottom: 0.4em; }
+  .card p { font-size: 0.95rem; color: #4A392B; margin: 0; }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (min-width: 860px) { .split { grid-template-columns: 0.9fr 1.1fr; } }
+  .split img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 18px 40px rgba(22,48,28,0.18);
+  }
+  .split h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+  .split ul { padding-left: 1.15em; color: #4A392B; }
+  .split li { margin-bottom: 0.5em; }
+
+  .territorios { display: grid; gap: 24px; grid-template-columns: 1fr; }
+  @media (min-width: 700px) { .territorios { grid-template-columns: 1fr 1fr; } }
+  .territorio {
+    background: #fff;
+    border-radius: 6px;
+    padding: 30px 28px;
+    border-left: 4px solid var(--forest);
+  }
+  .territorio h3 { margin-bottom: 4px; }
+  .territorio .loc { color: var(--olive); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; display: block; }
+
+  .cta {
+    background: var(--forest-dark);
+    color: #F1E9D6;
+    text-align: center;
+  }
+  .cta h2 { color: #fff; }
+  .cta p { max-width: 560px; margin: 0 auto 2em; color: #D9CFB4; }
+
+  footer {
+    background: var(--maroon);
+    color: #E4D2C2;
+    padding: 44px 0 30px;
+    font-size: 0.9rem;
+  }
+  footer .wrap { display: flex; flex-direction: column; gap: 18px; align-items: center; text-align: center; }
+  footer .brand-small { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.1rem; }
+  footer a { color: #F1D9C4; }
+  footer .fine { color: #C4A895; font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="images/logo-horizontal.jpg" alt="Raízes que Curam">
+    <nav class="site">
+      <a href="#projeto">O projeto</a>
+      <a href="#frentes">Frentes</a>
+      <a href="#territorios">Territórios</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Saberes ancestrais da natureza</div>
+    <h1>Uma rede viva de guardiãs, hortos e memória para curar territórios</h1>
+    <p class="lead">O Raízes que Curam fortalece, preserva e difunde os saberes tradicionais sobre plantas medicinais — com o protagonismo de mulheres guardiãs, regeneração ecológica e tecnologia a serviço da ancestralidade.</p>
+    <a class="btn" href="#projeto">Conhecer o projeto</a>
+    <a class="btn ghost" href="#contato">Acompanhar novidades</a>
+  </div>
+</section>
+
+<section id="projeto">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">O que é</div>
+      <h2>Cura que nasce da raiz</h2>
+    </div>
+    <p class="quote">O Raízes que Curam não quer apenas ensinar sobre plantas medicinais. Ele quer reorganizar relações entre <span>mulheres, saberes, floresta, território, renda, memória e futuro</span>.</p>
+  </div>
+</section>
+
+<section class="alt" id="frentes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Cinco frentes</div>
+      <h2>Como o projeto se organiza</h2>
+      <p>Um piloto territorial no Espírito Santo, pensado desde o início como metodologia replicável para outros territórios e biomas.</p>
+    </div>
+    <div class="grid5">
+      <div class="card">
+        <span class="num">01</span>
+        <h3>Mapeamento</h3>
+        <p>Erveiras, guardiãs, hortos e iniciativas de medicina natural, registrando e visibilizando um saber vivo.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3>Hortos-modelo</h3>
+        <p>Implantação de hortos agroecológicos com espécies medicinais nativas da Mata Atlântica capixaba.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>Formação</h3>
+        <p>Mulheres multiplicadoras formadas para atuar como educadoras, facilitadoras e articuladoras em seus territórios.</p>
+      </div>
+      <div class="card">
+        <span class="num">04</span>
+        <h3>Festival</h3>
+        <p>Difusão cultural e educativa online, gratuita ao vivo, com acervo audiovisual dos saberes tradicionais.</p>
+      </div>
+      <div class="card">
+        <span class="num">05</span>
+        <h3>Plataforma digital</h3>
+        <p>Registro, circulação e sustentabilidade dos conteúdos através do Portal Matriarquia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <img src="images/guardia.jpg" alt="Guardiã de saberes tradicionais preparando chá de ervas">
+    <div>
+      <div class="eyebrow">Público central</div>
+      <h2>Mulheres guardiãs no centro do processo</h2>
+      <p>Erveiras, benzedeiras, agricultoras familiares, parteiras, quilombolas, indígenas e guardiãs de hortos e quintais medicinais — o projeto parte do princípio de que o saber já existe nesses corpos e territórios, e busca reconhecê-lo, fortalecê-lo e ampliá-lo.</p>
+      <ul>
+        <li><strong>Guardiãs tradicionais</strong> — detentoras vivas do saber sobre plantas e cura.</li>
+        <li><strong>Multiplicadoras</strong> — formadas para conduzir oficinas, rodas e hortos comunitários.</li>
+        <li><strong>Comunidades e territórios</strong> — impactados pelos hortos, oficinas e educação ecológica.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="territorios">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Onde acontece</div>
+      <h2>Dois polos territoriais no Espírito Santo</h2>
+    </div>
+    <div class="territorios">
+      <div class="territorio">
+        <span class="loc">Caparaó</span>
+        <h3>Jardim do Ser</h3>
+        <p>Polo de formação presencial, implantação de horto-modelo e articulação comunitária na região do Caparaó.</p>
+      </div>
+      <div class="territorio">
+        <span class="loc">Marechal Floriano</span>
+        <h3>Instituto Ibietê</h3>
+        <p>Segundo polo territorial, com apoio socioambiental, reflorestamento e regeneração de território.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contato">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#B8CBB0">Em construção</div>
+    <h2>Estamos plantando esta página</h2>
+    <p>O Raízes que Curam está em fase de estruturação — hortos, formação de multiplicadoras e festival online em preparação. Em breve, novidades por aqui.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand-small">Raízes que Curam</div>
+    <div class="fine">Um projeto ShivaShakti Práticas Integrativas, em parceria com Instituto Ibietê, Jardim do Ser e Portal Matriarquia.</div>
+    <div class="fine">© 2026 Raízes que Curam</div>
+  </div>
+</footer>
+
+</body>
+</html>
