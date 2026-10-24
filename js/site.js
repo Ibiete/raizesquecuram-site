@@ -1,6 +1,8 @@
 // Raízes que Curam — interações da home (sem dependências)
 (() => {
   const FORM_ENDPOINT = 'https://painel.raizesquecuram.com/api/forms/raizesquecuram-site-interesse/submit';
+  window.RQC_FORM_ENDPOINT = FORM_ENDPOINT;
+  window.RQC_TRACK = (event, extra = {}) => (window.dataLayer = window.dataLayer || []).push({ event, ...extra });
 
   // Eventos de clique (instrumentação): ficam em window.dataLayer para quando
   // houver GA4/Tag Manager; sem ferramenta instalada, nada sai do navegador.

@@ -131,6 +131,8 @@ section { position: relative; }
 .main-nav a { text-decoration: none; font-family: var(--serif); font-size: 17px; color: var(--ink); white-space: nowrap; position: relative; }
 .main-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px; background: var(--terra); transform: scaleX(0); transition: transform .2s; }
 .main-nav a:hover::after { transform: scaleX(1); }
+.main-nav a.btn { color: var(--cream); }
+.main-nav a.btn::after { display: none; }
 .menu-toggle { display: none; margin-left: auto; background: none; border: 0; padding: 10px; cursor: pointer; }
 .menu-toggle span { display: block; width: 26px; height: 2px; background: var(--ink); margin: 6px 0; transition: transform .2s, opacity .2s; }
 .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
@@ -353,6 +355,7 @@ section { position: relative; }
 .join .title { color: var(--ink); font-weight: 500; }
 .join-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 40px 0 36px; position: relative; z-index: 1; }
 .join-card { background: #fbf5e9cc; border: 1px solid #dcc6a0; border-radius: 14px; padding: 28px 22px 30px; text-align: center; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 12px; transition: transform .18s, box-shadow .18s, border-color .18s; }
+.join-card { text-decoration: none; color: inherit; }
 .join-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px #4a301f22; border-color: var(--terra-2); }
 .join-card img { height: 110px; width: auto; object-fit: contain; }
 .join-card strong { font-family: var(--serif); font-weight: 500; color: var(--ink); font-size: 25px; line-height: 1.15; }
