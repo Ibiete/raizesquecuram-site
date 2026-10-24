@@ -1,0 +1,11 @@
+{
+  "name": "raizesquecuram-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "assets": "node scripts/assets.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.0"
+  }
+}

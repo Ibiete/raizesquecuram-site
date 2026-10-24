@@ -1,331 +1,546 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raízes que Curam — Saberes ancestrais da natureza</title>
-<meta name="description" content="Raízes que Curam: rede viva de guardiãs e multiplicadoras de saberes tradicionais sobre plantas medicinais, hortos agroecológicos e regeneração de territórios no Espírito Santo.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --maroon: #3D160B;
-    --rust: #8B3A0E;
-    --terracotta: #C1541A;
-    --forest-dark: #16301C;
-    --forest: #2E4A26;
-    --olive: #6B7233;
-    --cream: #F8F1E4;
-    --cream-2: #F1E6D2;
-    --ink: #2A1D14;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--cream);
-    color: var(--ink);
-    font-family: 'Karla', sans-serif;
-    line-height: 1.65;
-  }
-  h1, h2, h3, .brand {
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    margin: 0 0 0.5em;
-    color: var(--forest-dark);
-  }
-  a { color: var(--rust); }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--olive);
-  }
-
-  header.site {
-    padding: 18px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    background: var(--cream);
-    position: sticky;
-    top: 0;
-    z-index: 20;
-  }
-  header.site .wrap { display: flex; align-items: center; justify-content: space-between; }
-  header.site img { height: 46px; display: block; }
-  nav.site a {
-    color: var(--forest-dark);
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 26px;
-    font-size: 0.95rem;
-  }
-  nav.site a:hover { color: var(--terracotta); }
-  nav.site { display: none; }
-  @media (min-width: 760px) { nav.site { display: block; } }
-
-  .hero {
-    position: relative;
-    padding: 110px 0 100px;
-    overflow: hidden;
-    color: #fff;
-  }
-  .hero::before {
-    content: "";
-    position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(22,48,28,0.72) 0%, rgba(22,48,28,0.86) 55%, var(--cream) 100%), url('images/hero-natureza.jpg') center 30%/cover no-repeat;
-    z-index: -1;
-  }
-  .hero .wrap { text-align: center; }
-  .hero .eyebrow { color: #E4D9B8; }
-  .hero h1 {
-    color: #fff;
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    line-height: 1.15;
-    margin: 0.3em 0 0.4em;
-  }
-  .hero p.lead {
-    max-width: 640px;
-    margin: 0 auto 2em;
-    font-size: 1.15rem;
-    color: #F1E9D6;
-  }
-  .btn {
-    display: inline-block;
-    padding: 14px 30px;
-    background: var(--terracotta);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 3px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    transition: background 0.2s ease;
-  }
-  .btn:hover { background: var(--rust); }
-  .btn.ghost {
-    background: transparent;
-    border: 1.5px solid rgba(255,255,255,0.7);
-    margin-left: 14px;
-  }
-  .btn.ghost:hover { background: rgba(255,255,255,0.12); }
-
-  section { padding: 84px 0; }
-  section.alt { background: var(--cream-2); }
-  .section-head { text-align: center; max-width: 680px; margin: 0 auto 56px; }
-  .section-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); }
-  .section-head p { color: #4A392B; font-size: 1.05rem; }
-
-  .quote {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: clamp(1.25rem, 2.6vw, 1.6rem);
-    color: var(--forest-dark);
-    text-align: center;
-    max-width: 780px;
-    margin: 0 auto;
-    line-height: 1.5;
-  }
-  .quote span { color: var(--terracotta); font-style: normal; }
-
-  .grid5 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 28px;
-  }
-  .card {
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.06);
-    border-top: 3px solid var(--terracotta);
-    border-radius: 6px;
-    padding: 28px 24px;
-  }
-  .card:nth-child(2) { border-top-color: var(--olive); }
-  .card:nth-child(3) { border-top-color: var(--forest); }
-  .card:nth-child(4) { border-top-color: var(--rust); }
-  .card:nth-child(5) { border-top-color: var(--forest-dark); }
-  .card .num {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    color: var(--terracotta);
-    display: block;
-    margin-bottom: 8px;
-  }
-  .card h3 { font-size: 1.12rem; margin-bottom: 0.4em; }
-  .card p { font-size: 0.95rem; color: #4A392B; margin: 0; }
-
-  .split {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 48px;
-    align-items: center;
-  }
-  @media (min-width: 860px) { .split { grid-template-columns: 0.9fr 1.1fr; } }
-  .split img {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
-    box-shadow: 0 18px 40px rgba(22,48,28,0.18);
-  }
-  .split h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
-  .split ul { padding-left: 1.15em; color: #4A392B; }
-  .split li { margin-bottom: 0.5em; }
-
-  .territorios { display: grid; gap: 24px; grid-template-columns: 1fr; }
-  @media (min-width: 700px) { .territorios { grid-template-columns: 1fr 1fr; } }
-  .territorio {
-    background: #fff;
-    border-radius: 6px;
-    padding: 30px 28px;
-    border-left: 4px solid var(--forest);
-  }
-  .territorio h3 { margin-bottom: 4px; }
-  .territorio .loc { color: var(--olive); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; display: block; }
-
-  .cta {
-    background: var(--forest-dark);
-    color: #F1E9D6;
-    text-align: center;
-  }
-  .cta h2 { color: #fff; }
-  .cta p { max-width: 560px; margin: 0 auto 2em; color: #D9CFB4; }
-
-  footer {
-    background: var(--maroon);
-    color: #E4D2C2;
-    padding: 44px 0 30px;
-    font-size: 0.9rem;
-  }
-  footer .wrap { display: flex; flex-direction: column; gap: 18px; align-items: center; text-align: center; }
-  footer .brand-small { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.1rem; }
-  footer a { color: #F1D9C4; }
-  footer .fine { color: #C4A895; font-size: 0.8rem; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raízes que Curam — Plantas medicinais, pessoas e territórios</title>
+  <meta name="description" content="Tem muita coisa que não cabe em um vaso. Um universo de conhecimentos, descobertas e possibilidades sobre plantas medicinais — para quem quer aprender, quem já atua e quem quer multiplicar." />
+  <meta name="theme-color" content="#f4ecd9" />
+  <meta property="og:title" content="Raízes que Curam" />
+  <meta property="og:description" content="Tem muita coisa que não cabe em um vaso. Plantas medicinais, pessoas e territórios." />
+  <meta property="og:image" content="/assets/hero-calendula.webp" />
+  <meta property="og:locale" content="pt_BR" />
+  <link rel="icon" href="/assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap" />
+  <link rel="preload" as="image" href="/assets/hero-calendula.webp" />
+  <link rel="stylesheet" href="/css/site.css?v=1" />
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-<header class="site">
-  <div class="wrap">
-    <img src="images/logo-horizontal.jpg" alt="Raízes que Curam">
-    <nav class="site">
-      <a href="#projeto">O projeto</a>
-      <a href="#frentes">Frentes</a>
-      <a href="#territorios">Territórios</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Saberes ancestrais da natureza</div>
-    <h1>Uma rede viva de guardiãs, hortos e memória para curar territórios</h1>
-    <p class="lead">O Raízes que Curam fortalece, preserva e difunde os saberes tradicionais sobre plantas medicinais — com o protagonismo de mulheres guardiãs, regeneração ecológica e tecnologia a serviço da ancestralidade.</p>
-    <a class="btn" href="#projeto">Conhecer o projeto</a>
-    <a class="btn ghost" href="#contato">Acompanhar novidades</a>
-  </div>
-</section>
-
-<section id="projeto">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">O que é</div>
-      <h2>Cura que nasce da raiz</h2>
+  <!-- 01 · Menu -->
+  <header class="site-header" id="topo">
+    <div class="header-inner">
+      <a class="brand" href="#topo" aria-label="Raízes que Curam — início">
+        <img src="/assets/logo.webp" alt="Raízes que Curam" width="640" height="253" />
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="menu-principal" aria-label="Navegação principal">
+        <a href="#conheca">Raízes que Curam</a>
+        <a href="#rede">Rede de Agentes</a>
+        <a href="#aprender">Aprender</a>
+        <a href="#multiplicar">Multiplicar</a>
+        <a href="#festival">Festival</a>
+        <a href="#faca-parte">Faça Parte</a>
+        <button class="btn btn-forest btn-sm" type="button" data-form="geral">Participar</button>
+      </nav>
     </div>
-    <p class="quote">O Raízes que Curam não quer apenas ensinar sobre plantas medicinais. Ele quer reorganizar relações entre <span>mulheres, saberes, floresta, território, renda, memória e futuro</span>.</p>
-  </div>
-</section>
+  </header>
 
-<section class="alt" id="frentes">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Cinco frentes</div>
-      <h2>Como o projeto se organiza</h2>
-      <p>Um piloto territorial no Espírito Santo, pensado desde o início como metodologia replicável para outros territórios e biomas.</p>
+  <main id="conteudo">
+
+    <!-- 01 · Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo" role="img" aria-label="Calêndulas em flor num vaso de barro, ao lado de livros sobre plantas medicinais, uma tigela de pétalas secas e ramos de alecrim"></div>
+      <img class="hero-ramo" src="/assets/ramo-b.webp" alt="" aria-hidden="true" />
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">Tem muita coisa que não cabe em <em>um vaso.</em></h1>
+          <p class="hero-lead">Um universo de conhecimentos, descobertas e possibilidades esperando para ser explorado.</p>
+          <a class="btn btn-terra" href="#revelacao" data-track="hero_explore">Explore esse universo <span aria-hidden="true">→</span></a>
+          <div class="hero-themes">
+            <img class="hero-themes__mark" src="/assets/broto-terra.webp" alt="" aria-hidden="true" />
+            <ul>
+              <li><img src="/assets/ic-folha.webp" alt="" aria-hidden="true" />Plantas medicinais</li>
+              <li><img src="/assets/ic-pessoas.webp" alt="" aria-hidden="true" />Pessoas e territórios</li>
+              <li><img src="/assets/ic-broto.webp" alt="" aria-hidden="true" />Saberes em rede</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <img class="hero-raizes" src="/assets/raizes.webp" alt="" aria-hidden="true" />
+    </section>
+
+    <!-- 02 · Revelação -->
+    <section class="revelation" id="revelacao" aria-labelledby="revelacao-title">
+      <img class="deco deco-rev-dir" src="/assets/ramo-a.webp" alt="" aria-hidden="true" loading="lazy" />
+      <img class="deco deco-rev-esq" src="/assets/ramo-c.webp" alt="" aria-hidden="true" loading="lazy" />
+      <div class="wrap">
+        <p class="eyebrow eyebrow--center">Olhe um pouco mais de perto</p>
+        <h2 id="revelacao-title" class="title title--center">Uma planta pode ser o começo de <em>muita coisa.</em></h2>
+        <div class="discovery">
+          <figure>
+            <img src="/assets/descoberta.webp" alt="Dedos segurando uma flor de camomila num canteiro florido" loading="lazy" width="900" height="515" />
+            <figcaption>De uma pergunta<br />que você nunca fez.</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/experiencia.webp" alt="Mãos plantando uma muda na terra escura" loading="lazy" width="900" height="508" />
+            <figcaption>De uma experiência<br />que ainda não viveu.</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/conhecimento.webp" alt="Mulher de chapéu mostra uma erva a pessoas sentadas ao seu redor numa horta" loading="lazy" width="900" height="510" />
+            <figcaption>De um conhecimento<br />que levou anos para ser construído.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02b · Públicos -->
+    <section class="pathways" id="aprender" aria-labelledby="caminhos-title">
+      <div class="pathways-bg" aria-hidden="true"></div>
+      <div class="wrap">
+        <h2 id="caminhos-title" class="title title--center">E você, <em>até onde quer ir?</em></h2>
+        <p class="lead lead--center">Tem quem esteja começando a descobrir. Quem já fez das plantas medicinais parte do seu trabalho. E quem quer levar esse conhecimento ainda mais longe.</p>
+        <div class="pathway-grid">
+          <article class="pathway">
+            <img src="/assets/aprendizes.webp" alt="Mulher sente o aroma de um ramo de ervas" loading="lazy" width="900" height="487" />
+            <div class="pathway__body">
+              <p class="kicker">Aprendizes</p>
+              <h3>Ainda não sabe por onde começar?</h3>
+              <p>Aprenda a conhecer e cultivar plantas medicinais, com experiências que aproximam o conhecimento da sua vida.</p>
+              <button class="btn btn-terra" type="button" data-form="aprender" data-track="publico_aprendiz">Quero começar <span aria-hidden="true">→</span></button>
+            </div>
+            <img class="pathway__deco" src="/assets/ramo-linha.webp" alt="" aria-hidden="true" loading="lazy" />
+          </article>
+          <article class="pathway">
+            <img src="/assets/agentes.webp" alt="Agricultor de chapéu sorri segurando um maço de plantas" loading="lazy" width="900" height="502" />
+            <div class="pathway__body">
+              <p class="kicker">Agentes</p>
+              <h3>As plantas medicinais já fazem parte do seu trabalho?</h3>
+              <p>Compartilhe sua trajetória, apresente sua atuação e faça parte do mapeamento de pessoas e iniciativas.</p>
+              <button class="btn btn-forest" type="button" data-form="agente" data-track="publico_agente">Coloque seu trabalho no mapa <span aria-hidden="true">→</span></button>
+            </div>
+            <img class="pathway__deco" src="/assets/ramo-linha.webp" alt="" aria-hidden="true" loading="lazy" />
+          </article>
+          <article class="pathway">
+            <img src="/assets/multiplicadores-card.webp" alt="Educadora conversa com um grupo numa horta" loading="lazy" width="900" height="487" />
+            <div class="pathway__body">
+              <p class="kicker">Multiplicadores</p>
+              <h3>Quer que esse conhecimento chegue mais longe?</h3>
+              <p>Conheça a proposta de formação para quem deseja compartilhar conhecimentos e desenvolver atividades em seu território.</p>
+              <button class="btn btn-terra" type="button" data-form="multiplicar" data-track="publico_multiplicador">Quero multiplicar <span aria-hidden="true">→</span></button>
+            </div>
+            <img class="pathway__deco" src="/assets/flor-linha.webp" alt="" aria-hidden="true" loading="lazy" />
+          </article>
+        </div>
+        <p class="closing">O que começa como raiz, cresce como rede.</p>
+      </div>
+      <img class="pathways-raizes" src="/assets/raizes-2.webp" alt="" aria-hidden="true" loading="lazy" />
+    </section>
+
+    <!-- 03 · Rede de Agentes -->
+    <section class="network" id="rede" aria-labelledby="rede-title">
+      <div class="wrap network-grid">
+        <div class="network-copy">
+          <p class="eyebrow eyebrow--rule">Rede de Agentes · <img src="/assets/broto-mini.webp" alt="" aria-hidden="true" /> Pessoas, territórios e iniciativas</p>
+          <h2 id="rede-title" class="title title--xl">Um país inteiro de saberes <em>para descobrir.</em></h2>
+          <p class="lead">Existe uma rede viva de pessoas que cultiva, pesquisa, ensina, produz, cuida e preserva conhecimentos sobre plantas medicinais em diferentes territórios do Brasil. <strong>O Raízes que Curam está mapeando essas trajetórias para torná-las mais visíveis e acessíveis.</strong></p>
+          <ul class="areas" aria-label="Áreas de atuação mapeadas">
+            <li><span><img src="/assets/ic-cultivo.webp" alt="" /></span>Cultivo e agricultura familiar</li>
+            <li><span><img src="/assets/ic-pesquisa.webp" alt="" /></span>Pesquisa e ciência</li>
+            <li><span><img src="/assets/ic-fito.webp" alt="" /></span>Fitoterápicos e manipulação</li>
+            <li><span><img src="/assets/ic-bio.webp" alt="" /></span>Biocosméticos e produtos naturais</li>
+            <li><span><img src="/assets/ic-educacao.webp" alt="" /></span>Educação e facilitação</li>
+            <li><span><img src="/assets/ic-saberes.webp" alt="" /></span>Saberes tradicionais e cuidado</li>
+          </ul>
+        </div>
+        <div class="network-visual">
+          <img class="network-guardias" src="/assets/guardias.webp" alt="Seis retratos: pesquisadora, raizeira, cultivador, educadora, produtor de fitoterápicos e produtora de biocosméticos" loading="lazy" width="1500" height="570" />
+          <figure class="network-map">
+            <img src="/assets/mapa-notebook.webp" alt="Prévia do mapa da Rede de Agentes num notebook, com busca, filtros por estado e área de atuação e pinos pelo Brasil" loading="lazy" width="1400" height="682" />
+            <figcaption>Prévia ilustrativa · cadastros em andamento</figcaption>
+          </figure>
+        </div>
+        <div class="network-cards">
+          <article class="paper-card">
+            <img class="paper-card__deco paper-card__deco--left" src="/assets/camomila-canto.webp" alt="" aria-hidden="true" loading="lazy" />
+            <h3>Quer descobrir?</h3>
+            <p>Encontre pessoas e iniciativas por localidade, área de atuação e tipo de atividade.</p>
+            <button class="btn btn-terra" type="button" data-form="mapa" data-track="rede_explorar_mapa">Explorar o mapa <span aria-hidden="true">→</span></button>
+          </article>
+          <article class="paper-card">
+            <img class="paper-card__deco paper-card__deco--right" src="/assets/alecrim-dir.webp" alt="" aria-hidden="true" loading="lazy" />
+            <h3>Já trabalha com plantas?</h3>
+            <p>Apresente sua trajetória e faça parte da rede. Sua atuação pode inspirar e conectar mais pessoas.</p>
+            <button class="btn btn-forest" type="button" data-form="agente" data-track="rede_cadastrar">Cadastrar minha iniciativa <span aria-hidden="true">→</span></button>
+          </article>
+        </div>
+      </div>
+      <div class="network-foot">
+        <img class="divider-mark" src="/assets/broto-mini.webp" alt="" aria-hidden="true" loading="lazy" />
+        <p class="closing">Diferentes pessoas. Diferentes territórios. Um mesmo propósito:<br />tornar esses saberes mais visíveis.</p>
+        <img class="network-montanhas" src="/assets/montanhas.webp" alt="" aria-hidden="true" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- 04 · Perfis e Histórias -->
+    <section class="stories" id="historias" aria-labelledby="historias-title">
+      <img class="deco deco-stories" src="/assets/galho-topo.webp" alt="" aria-hidden="true" loading="lazy" />
+      <img class="deco deco-stories-b" src="/assets/alecrim-esq.webp" alt="" aria-hidden="true" loading="lazy" />
+      <div class="wrap">
+        <div class="stories-head">
+          <div>
+            <p class="eyebrow eyebrow--rule">Perfis e histórias <img src="/assets/broto-mini.webp" alt="" aria-hidden="true" /></p>
+            <h2 id="historias-title" class="title title--xl">Pessoas reais, <em>impactos concretos</em></h2>
+            <p class="lead">Conheça histórias inspiradoras de pessoas e iniciativas que fazem parte do Raízes que Curam. São trajetórias de cultivo, pesquisa, cuidado e transformação com as plantas medicinais em diferentes territórios do Brasil.</p>
+            <button class="btn btn-terra" type="button" data-form="historias" data-track="historias_ver_todas">Ver todas as histórias <span aria-hidden="true">→</span></button>
+          </div>
+          <blockquote class="stories-quote">
+            <p>“As plantas me reconectaram com a terra, com a minha saúde e com a minha comunidade.”</p>
+            <footer><strong>Dona Cecília</strong> Quilombo do Vale — MG</footer>
+          </blockquote>
+        </div>
+
+        <div class="carousel" data-carousel aria-roledescription="carrossel" aria-label="Histórias">
+          <p class="demo-note">Exemplos ilustrativos — as histórias reais entram após autorização de cada pessoa.</p>
+          <button class="carousel__nav carousel__nav--prev" type="button" aria-label="História anterior" data-prev>‹</button>
+          <div class="carousel__track" data-track tabindex="0">
+            <article class="story" aria-roledescription="slide">
+              <div class="story__photo"><img src="/assets/perfil-cecilia.webp" alt="Senhora de turbante segurando ervas" loading="lazy" width="760" height="600" /><span class="tag">Cultivo e tradição</span></div>
+              <div class="story__body">
+                <h3>Dona Cecília</h3>
+                <p class="place">Quilombo do Vale — MG</p>
+                <p>“As plantas me reconectaram com a terra, com a minha saúde e com a minha comunidade.”</p>
+                <button class="link-arrow" type="button" data-form="historias">Ver história <span aria-hidden="true">→</span></button>
+              </div>
+            </article>
+            <article class="story" aria-roledescription="slide">
+              <div class="story__photo"><img src="/assets/perfil-rafael.webp" alt="Homem de chapéu de palha sorrindo entre plantas" loading="lazy" width="760" height="600" /><span class="tag">Pesquisa e ciência</span></div>
+              <div class="story__body">
+                <h3>Rafael Torres</h3>
+                <p class="place">Serra da Mantiqueira — SP</p>
+                <p>“Estudar as plantas medicinais é unir ciência e tradição para cuidar das pessoas e da terra.”</p>
+                <button class="link-arrow" type="button" data-form="historias">Ver história <span aria-hidden="true">→</span></button>
+              </div>
+            </article>
+            <article class="story" aria-roledescription="slide">
+              <div class="story__photo"><img src="/assets/perfil-luana.webp" alt="Mulher manipulando um creme com conta-gotas" loading="lazy" width="760" height="600" /><span class="tag">Fitoterápicos e biocosméticos</span></div>
+              <div class="story__body">
+                <h3>Luana Ferreira</h3>
+                <p class="place">Alto Paraíso — GO</p>
+                <p>“Transformar o conhecimento das plantas em saúde acessível é o que me move.”</p>
+                <button class="link-arrow" type="button" data-form="historias">Ver história <span aria-hidden="true">→</span></button>
+              </div>
+            </article>
+          </div>
+          <button class="carousel__nav carousel__nav--next" type="button" aria-label="Próxima história" data-next>›</button>
+          <div class="carousel__dots" data-dots></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · Oficina Farmácia Viva -->
+    <section class="workshop" id="oficina" aria-labelledby="oficina-title">
+      <img class="deco deco-ws-esq" src="/assets/alecrim-esq.webp" alt="" aria-hidden="true" loading="lazy" />
+      <img class="deco deco-ws-dir" src="/assets/alecrim-dir.webp" alt="" aria-hidden="true" loading="lazy" />
+      <div class="wrap">
+        <div class="workshop-top">
+          <div class="workshop-copy">
+            <p class="eyebrow eyebrow--rule">Aprender · Oficina presencial <img src="/assets/broto-mini.webp" alt="" aria-hidden="true" /></p>
+            <h2 id="oficina-title" class="title title--xl">Quatro modelos para criar a sua primeira <em>farmácia viva.</em></h2>
+            <p class="lead">Aprenda, na prática, diferentes formas de aproveitar o seu quintal, parede ou pequenos espaços para cultivar plantas medicinais, com simplicidade e funcionalidade.</p>
+            <ul class="model-chips" aria-label="Formatos">
+              <li><img src="/assets/ic-quintal.webp" alt="" />No quintal</li>
+              <li><img src="/assets/ic-parede.webp" alt="" />Na parede</li>
+              <li><img src="/assets/ic-moldura.webp" alt="" />Em 1m × 1m</li>
+              <li><img src="/assets/ic-vertical.webp" alt="" />No vertical</li>
+            </ul>
+            <button class="btn btn-terra btn-lg" type="button" data-form="oficina" data-track="oficina_conhecer">Conheça a oficina <span aria-hidden="true">→</span></button>
+          </div>
+          <ol class="models">
+            <li><img src="/assets/modelo-1.webp" alt="Canteiros elevados de madeira num quintal com pérgola" loading="lazy" /><span>Modelo 1<strong>Quintal produtivo</strong></span></li>
+            <li><img src="/assets/modelo-2.webp" alt="Treliça de madeira com vasos de ervas presa num muro branco" loading="lazy" /><span>Modelo 2<strong>Parede medicinal</strong></span></li>
+            <li><img src="/assets/modelo-3.webp" alt="Moldura de madeira quadrada com ervas e calêndulas na parede" loading="lazy" /><span>Modelo 3<strong>Moldura 1m × 1m</strong></span></li>
+            <li><img src="/assets/modelo-4.webp" alt="Canos de bambu na vertical com ervas plantadas" loading="lazy" /><span>Modelo 4<strong>Vertical com canos</strong></span></li>
+          </ol>
+        </div>
+        <div class="workshop-info">
+          <div class="info-card info-when">
+            <div><img src="/assets/ic-calendario.webp" alt="" /><p><small>Datas</small><strong>Previsão: janeiro de 2027</strong>Datas em confirmação</p></div>
+            <div><img src="/assets/ic-local.webp" alt="" /><p><small>Local</small><strong>Espírito Santo</strong>Espaço a confirmar</p></div>
+          </div>
+          <div class="info-card info-facilitator">
+            <img class="avatar" src="/assets/ryan.webp" alt="Retrato do facilitador Ryan, de chapéu de palha" loading="lazy" width="420" height="488" />
+            <div>
+              <small>Facilitador</small>
+              <h3>Ryan</h3>
+              <p>Educador, agricultor e pesquisador de plantas medicinais. Atua com hortas medicinais, agroflorestas e educação popular, compartilhando saberes de forma prática e acessível.</p>
+            </div>
+          </div>
+          <div class="info-card info-learn">
+            <h3>O que você vai aprender</h3>
+            <ul class="checks">
+              <li>Planejar e montar 4 modelos de horto medicinal</li>
+              <li>Escolher as espécies mais adequadas</li>
+              <li>Técnicas simples e de baixo custo</li>
+              <li>Cuidados, manejo e colheita</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · Festival Online -->
+    <section class="festival" id="festival" aria-labelledby="festival-title">
+      <img class="deco deco-fest-esq" src="/assets/calendula-canto.webp" alt="" aria-hidden="true" loading="lazy" />
+      <img class="deco deco-fest-dir" src="/assets/alecrim-canto.webp" alt="" aria-hidden="true" loading="lazy" />
+      <div class="wrap festival-grid">
+        <div class="festival-copy">
+          <p class="eyebrow eyebrow--rule-after">Festival online · Março de 2027 (previsão)</p>
+          <h2 id="festival-title" class="title title--xl festival-title"><span>Muitos saberes.</span> Um encontro que atravessa <em>territórios.</em></h2>
+          <p class="lead">Três dias para descobrir conhecimentos, conhecer diferentes perspectivas e ouvir pessoas que dedicam suas trajetórias ao universo das plantas medicinais.</p>
+          <p class="status-line"><img src="/assets/broto-terra-2.webp" alt="" aria-hidden="true" /> Lista de interesse aberta</p>
+          <div class="btn-row">
+            <button class="btn btn-terra" type="button" data-form="festival" data-track="festival_participar"><em>Quero participar</em> <span aria-hidden="true">→</span></button>
+            <button class="btn btn-ghost" type="button" data-form="festival-proposta" data-track="festival_propor">Quero propor uma atividade</button>
+          </div>
+        </div>
+        <div class="festival-visual">
+          <img src="/assets/festival-colagem.webp" alt="Colagem de pessoas de várias idades com plantas medicinais e flores: uma senhora de lenço com ervas, mulheres cheirando flores, homem manipulando frascos" loading="lazy" width="1400" height="970" />
+          <p class="festival-tagline">Plantas<br />Pessoas<br />Territórios<br />Futuros possíveis</p>
+        </div>
+      </div>
+      <div class="wrap">
+        <ul class="facts" aria-label="Formato previsto">
+          <li><img src="/assets/ic-dias.webp" alt="" /><p><strong>3 dias</strong>de programação</p></li>
+          <li><img src="/assets/ic-master.webp" alt="" /><p><strong>5 masterclasses</strong>por dia</p></li>
+          <li><img src="/assets/ic-vozes.webp" alt="" /><p><strong>15 vozes</strong>convidadas</p></li>
+          <li><img src="/assets/ic-online.webp" alt="" /><p><strong>100% online</strong>em todo o Brasil</p></li>
+        </ul>
+        <img class="divider-mark" src="/assets/broto-terra-2.webp" alt="" aria-hidden="true" loading="lazy" />
+        <p class="closing closing--sm">Para quem quer aprender, compartilhar e se conectar<br />com o universo das plantas medicinais.</p>
+      </div>
+    </section>
+
+    <!-- 07 · Multiplicar -->
+    <section class="multiply" id="multiplicar" aria-labelledby="multiplicar-title">
+      <div class="multiply-photo" aria-hidden="true"><img src="/assets/roda-saberes.webp" alt="" loading="lazy" /></div>
+      <img class="deco deco-mult-a" src="/assets/ouro-folhas.webp" alt="" aria-hidden="true" loading="lazy" />
+      <img class="deco deco-mult-b" src="/assets/ouro-canto.webp" alt="" aria-hidden="true" loading="lazy" />
+      <div class="wrap">
+        <div class="multiply-copy">
+          <p class="eyebrow eyebrow--gold">Multiplicadores · Formação e oportunidades</p>
+          <h2 id="multiplicar-title" class="title title--xl">O que você sabe pode <em>florescer</em> nas mãos de outras pessoas.</h2>
+          <p class="lead">Transforme seus conhecimentos e experiências com plantas medicinais em oficinas, encontros e iniciativas no seu território.</p>
+          <p class="lead">Uma jornada para quem deseja aprender a compartilhar saberes, facilitar experiências e multiplicar oportunidades.</p>
+          <ul class="axes">
+            <li><img src="/assets/ic-ensinar.webp" alt="" />Aprender<br />a ensinar</li>
+            <li><img src="/assets/ic-mobilizar.webp" alt="" />Mobilizar<br />comunidades</li>
+            <li><img src="/assets/ic-iniciativas.webp" alt="" />Desenvolver<br />iniciativas</li>
+          </ul>
+          <div class="cta-block">
+            <button class="btn btn-olive btn-lg" type="button" data-form="multiplicar" data-track="multiplicar_cta">Quero ser Multiplicador <span aria-hidden="true">→</span></button>
+            <p>Cadastre seu interesse para conhecer as próximas oportunidades de formação.</p>
+          </div>
+          <img class="gold-rule" src="/assets/divisor-ouro-raiz.webp" alt="" aria-hidden="true" loading="lazy" />
+          <p class="closing closing--light">Quando um saber circula, ele cria novas raízes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 · Conheça o projeto -->
+    <section class="about" id="conheca" aria-labelledby="conheca-title">
+      <div class="wrap about-grid">
+        <div class="about-copy">
+          <p class="eyebrow eyebrow--gold eyebrow--rule-after">Raízes que Curam · Conheça o projeto</p>
+          <h2 id="conheca-title" class="title title--xl">Não é só sobre plantas. É <em>sobre tudo</em> o que pode nascer desse conhecimento.</h2>
+          <p class="lead">O Raízes que Curam aproxima pessoas do universo das plantas medicinais, valoriza diferentes saberes e cria oportunidades para aprender, compartilhar e transformar experiências em novas possibilidades.</p>
+          <p class="lead">Da curiosidade de quem está começando à trajetória de quem dedica a vida a esse conhecimento.</p>
+          <ul class="values">
+            <li><img src="/assets/ic-circula.webp" alt="" />Conhecimento<br />que circula</li>
+            <li><img src="/assets/ic-conectam.webp" alt="" />Pessoas<br />que conectam</li>
+            <li><img src="/assets/ic-territorios.webp" alt="" />Territórios<br />mais vivos</li>
+            <li><img src="/assets/ic-possibilidades.webp" alt="" />Novas<br />possibilidades</li>
+          </ul>
+          <a class="btn btn-gold btn-lg" href="#como-atuamos" data-track="conheca_cta">Conheça o Raízes que Curam <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="about-photo">
+          <img src="/assets/mulher-jardim.webp" alt="Mulher de chapéu de palha colhe ervas e flores num cesto, num jardim ao entardecer" loading="lazy" width="1100" height="1158" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 · Como atuamos -->
+    <section class="how" id="como-atuamos" aria-labelledby="atuamos-title">
+      <div class="wrap how-grid">
+        <div class="how-copy">
+          <p class="eyebrow eyebrow--rule-after eyebrow--terra">Como atuamos</p>
+          <h2 id="atuamos-title" class="title title--xl how-title">Do conhecimento à <em>transformação real</em> nos territórios.</h2>
+          <p class="lead">Atuamos por meio de formações, encontros, trocas de saberes e iniciativas que fortalecem o uso das plantas medicinais e a conexão entre pessoas, comunidades e territórios.</p>
+          <ul class="fronts">
+            <li><img src="/assets/ic-formacoes.webp" alt="" />Formações<br />e oficinas</li>
+            <li><img src="/assets/ic-encontros.webp" alt="" />Encontros e<br />trocas de saberes</li>
+            <li><img src="/assets/ic-apoio.webp" alt="" />Apoio a<br />iniciativas locais</li>
+            <li><img src="/assets/ic-articulacao.webp" alt="" />Articulação<br />em rede</li>
+          </ul>
+          <a class="btn btn-olive btn-lg" href="#faca-parte" data-track="atuamos_cta">Saiba como atuamos <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="how-photo">
+          <img src="/assets/colagem-atuamos.webp" alt="Colagem de três fotos: mãos colhendo flores de camomila, ervas num pilão de pedra e um caderno de anotações com folhas prensadas" loading="lazy" width="1000" height="1281" />
+        </div>
+      </div>
+      <div class="how-foot">
+        <img src="/assets/raizes-2.webp" alt="" aria-hidden="true" loading="lazy" />
+        <p class="closing closing--sm">Cuidar da terra. Fortalecer quem cuida. Multiplicar a cura.</p>
+      </div>
+    </section>
+
+    <!-- 10 · Faça parte -->
+    <section class="join" id="faca-parte" aria-labelledby="faca-title">
+      <img class="deco deco-join-tl" src="/assets/fp-canto-camomila.webp" alt="" aria-hidden="true" loading="lazy" />
+      <img class="deco deco-join-tr" src="/assets/fp-canto-ramo.webp" alt="" aria-hidden="true" loading="lazy" />
+      <img class="deco deco-join-bl" src="/assets/fp-canto-alecrim.webp" alt="" aria-hidden="true" loading="lazy" />
+      <img class="deco deco-join-br" src="/assets/fp-canto-calendula.webp" alt="" aria-hidden="true" loading="lazy" />
+      <div class="wrap wrap--narrow">
+        <p class="eyebrow eyebrow--center eyebrow--lines">Faça parte · Seu caminho começa aqui</p>
+        <h2 id="faca-title" class="title title--xl title--center">Tem um lugar para <em>você</em> nesse universo.</h2>
+        <p class="lead lead--center">Não importa se você está começando, já atua com plantas medicinais ou deseja levar esses saberes adiante. O Raízes que Curam reúne diferentes formas de participação.</p>
+      </div>
+      <div class="wrap">
+        <div class="join-grid">
+          <button class="join-card" type="button" data-form="aprender" data-track="faca_aprender"><img src="/assets/fp-aprender.webp" alt="" /><strong>Quero aprender</strong><span>Dê os primeiros passos no universo das plantas medicinais.</span></button>
+          <button class="join-card" type="button" data-form="agente" data-track="faca_agente"><img src="/assets/fp-agentes.webp" alt="" /><strong>Já trabalho com plantas medicinais</strong><span>Apresente sua trajetória e faça parte da Rede de Agentes.</span></button>
+          <button class="join-card" type="button" data-form="multiplicar" data-track="faca_multiplicar"><img src="/assets/fp-multiplicar.webp" alt="" /><strong>Quero multiplicar</strong><span>Conheça as oportunidades de formação e compartilhamento de saberes.</span></button>
+          <button class="join-card" type="button" data-form="parceria" data-track="faca_apoiar"><img src="/assets/fp-apoiar.webp" alt="" /><strong>Quero apoiar o projeto</strong><span>Descubra possibilidades de parceria e colaboração.</span></button>
+        </div>
+        <div class="center">
+          <button class="btn btn-olive btn-lg" type="button" data-form="geral" data-track="faca_cta">Fazer parte do Raízes que Curam <span aria-hidden="true">→</span></button>
+        </div>
+        <img class="divider-mark" src="/assets/fp-broto.webp" alt="" aria-hidden="true" loading="lazy" />
+        <p class="closing closing--sm closing--lines">Cada caminho fortalece a rede viva dos saberes.</p>
+      </div>
+    </section>
+
+    <!-- 11 · Parceiros e Apoiadores -->
+    <section class="partners" id="parceiros" aria-labelledby="parceiros-title">
+      <img class="deco deco-part-tl" src="/assets/ouro-folhas.webp" alt="" aria-hidden="true" loading="lazy" />
+      <img class="deco deco-part-bl" src="/assets/ouro-canto.webp" alt="" aria-hidden="true" loading="lazy" />
+      <img class="deco deco-part-tr" src="/assets/galho-luz.webp" alt="" aria-hidden="true" loading="lazy" />
+      <img class="deco deco-part-br" src="/assets/tigela-canto.webp" alt="" aria-hidden="true" loading="lazy" />
+      <div class="wrap partners-grid">
+        <div class="partners-copy">
+          <p class="eyebrow eyebrow--gold eyebrow--rule-below">Parceiros e apoiadores · Cultivando impacto juntos</p>
+          <h2 id="parceiros-title" class="title title--xl">Algumas <em>transformações</em> precisam de muitas mãos.</h2>
+          <p class="lead">O Raízes que Curam cresce por meio de encontros, colaborações e organizações que acreditam na força dos conhecimentos sobre plantas medicinais. Juntos, ampliamos o acesso à formação, valorizamos quem preserva esses saberes e criamos novas oportunidades nos territórios.</p>
+          <ul class="axes axes--partners">
+            <li><img src="/assets/ic-formacao-ouro.webp" alt="" />Formação</li>
+            <li><img src="/assets/ic-conexao-ouro.webp" alt="" />Conexão<br />territorial</li>
+            <li><img src="/assets/ic-rede-ouro.webp" alt="" />Fortalecimento<br />de rede</li>
+          </ul>
+          <div class="cta-block cta-block--left">
+            <button class="btn btn-olive btn-lg" type="button" data-form="parceria" data-track="parceiros_cta">Seja um parceiro <span aria-hidden="true">→</span></button>
+            <p>Sua organização também pode fazer parte dessa história.</p>
+          </div>
+        </div>
+        <div class="partners-board">
+          <p class="board-label">Realização</p>
+          <div class="board-row board-row--2">
+            <div class="board-card"><img src="/assets/ouro-ramo.webp" alt="" aria-hidden="true" />Instituto Ibietê</div>
+            <div class="board-card"><img src="/assets/ouro-flor.webp" alt="" aria-hidden="true" />ShivaShakti</div>
+          </div>
+          <p class="board-label">Rede</p>
+          <div class="board-row"><div class="board-card board-card--wide"><img src="/assets/ouro-ramo.webp" alt="" aria-hidden="true" />Raízes que Curam</div></div>
+          <p class="board-label">Apoio</p>
+          <div class="board-row board-row--3">
+            <div class="board-card board-card--sm"><img src="/assets/ouro-ramo.webp" alt="" aria-hidden="true" />Coletivos locais</div>
+            <div class="board-card board-card--sm"><img src="/assets/ouro-flor.webp" alt="" aria-hidden="true" />Instituições parceiras</div>
+            <div class="board-card board-card--sm"><img src="/assets/ouro-flor.webp" alt="" aria-hidden="true" />Apoiadores culturais</div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap partners-foot">
+        <img class="gold-rule" src="/assets/divisor-ouro-raiz.webp" alt="" aria-hidden="true" loading="lazy" />
+        <p class="closing closing--light closing--sm">Quando o cuidado se encontra, a transformação floresce.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12 · Rodapé -->
+  <footer class="site-footer" aria-labelledby="rodape-title">
+    <img class="deco deco-foot-esq" src="/assets/rodape-esq.webp" alt="" aria-hidden="true" loading="lazy" />
+    <img class="deco deco-foot-dir" src="/assets/rodape-dir.webp" alt="" aria-hidden="true" loading="lazy" />
+    <div class="wrap">
+      <div class="footer-top">
+        <p class="eyebrow eyebrow--gold eyebrow--center eyebrow--wide">Plantas · Pessoas · Territórios</p>
+        <h2 id="rodape-title" class="title title--xl title--center">O conhecimento <em>cria raízes</em> quando é compartilhado.</h2>
+        <p class="lead lead--center">Continue cultivando essa conexão com a gente.</p>
+        <img class="footer-divider" src="/assets/divisor-folha.webp" alt="" aria-hidden="true" loading="lazy" />
+      </div>
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <img src="/assets/logo-branca.webp" alt="Raízes que Curam — Plantas · Pessoas · Territórios" loading="lazy" width="560" height="529" />
+        </div>
+        <nav aria-label="Explore">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#conheca">Raízes que Curam</a></li>
+            <li><a href="#rede">Rede de Agentes</a></li>
+            <li><a href="#aprender">Aprender</a></li>
+            <li><a href="#multiplicar">Multiplicar</a></li>
+            <li><a href="#festival">Festival</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Participe">
+          <h3>Participe</h3>
+          <ul>
+            <li><a href="#faca-parte">Faça Parte</a></li>
+            <li><button type="button" data-form="parceria">Seja um parceiro</button></li>
+            <li><button type="button" data-form="contato">Entre em contato</button></li>
+          </ul>
+        </nav>
+        <div>
+          <h3>Contato</h3>
+          <p class="footer-contact">Fale com a equipe pelo formulário — respondemos por e-mail.</p>
+          <button class="btn btn-outline-gold btn-sm" type="button" data-form="contato">Enviar mensagem</button>
+        </div>
+      </div>
+      <img class="footer-roots" src="/assets/divisor-raiz.webp" alt="" aria-hidden="true" loading="lazy" />
+      <div class="footer-bottom">
+        <p>© Raízes que Curam · <span data-year>2026</span><br />Todos os direitos reservados.</p>
+        <p class="footer-legal"><a href="/privacidade.html">Privacidade</a></p>
+        <p class="footer-sign"><img src="/assets/ouro-broto.webp" alt="" aria-hidden="true" />Cuidar da terra.<br />Fortalecer quem cuida.<br />Multiplicar a cura.</p>
+      </div>
     </div>
-    <div class="grid5">
-      <div class="card">
-        <span class="num">01</span>
-        <h3>Mapeamento</h3>
-        <p>Erveiras, guardiãs, hortos e iniciativas de medicina natural, registrando e visibilizando um saber vivo.</p>
-      </div>
-      <div class="card">
-        <span class="num">02</span>
-        <h3>Hortos-modelo</h3>
-        <p>Implantação de hortos agroecológicos com espécies medicinais nativas da Mata Atlântica capixaba.</p>
-      </div>
-      <div class="card">
-        <span class="num">03</span>
-        <h3>Formação</h3>
-        <p>Mulheres multiplicadoras formadas para atuar como educadoras, facilitadoras e articuladoras em seus territórios.</p>
-      </div>
-      <div class="card">
-        <span class="num">04</span>
-        <h3>Festival</h3>
-        <p>Difusão cultural e educativa online, gratuita ao vivo, com acervo audiovisual dos saberes tradicionais.</p>
-      </div>
-      <div class="card">
-        <span class="num">05</span>
-        <h3>Plataforma digital</h3>
-        <p>Registro, circulação e sustentabilidade dos conteúdos através do Portal Matriarquia.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<section>
-  <div class="wrap split">
-    <img src="images/guardia.jpg" alt="Guardiã de saberes tradicionais preparando chá de ervas">
-    <div>
-      <div class="eyebrow">Público central</div>
-      <h2>Mulheres guardiãs no centro do processo</h2>
-      <p>Erveiras, benzedeiras, agricultoras familiares, parteiras, quilombolas, indígenas e guardiãs de hortos e quintais medicinais — o projeto parte do princípio de que o saber já existe nesses corpos e territórios, e busca reconhecê-lo, fortalecê-lo e ampliá-lo.</p>
-      <ul>
-        <li><strong>Guardiãs tradicionais</strong> — detentoras vivas do saber sobre plantas e cura.</li>
-        <li><strong>Multiplicadoras</strong> — formadas para conduzir oficinas, rodas e hortos comunitários.</li>
-        <li><strong>Comunidades e territórios</strong> — impactados pelos hortos, oficinas e educação ecológica.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="alt" id="territorios">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Onde acontece</div>
-      <h2>Dois polos territoriais no Espírito Santo</h2>
-    </div>
-    <div class="territorios">
-      <div class="territorio">
-        <span class="loc">Caparaó</span>
-        <h3>Jardim do Ser</h3>
-        <p>Polo de formação presencial, implantação de horto-modelo e articulação comunitária na região do Caparaó.</p>
+  <!-- Formulário de interesse (todos os CTAs abrem aqui, com o interesse pré-selecionado) -->
+  <dialog class="form-dialog" id="form-dialog" aria-labelledby="form-title">
+    <form class="interest-form" id="interest-form" novalidate>
+      <button class="form-close" type="button" aria-label="Fechar" data-close>×</button>
+      <p class="eyebrow" id="form-eyebrow">Faça parte</p>
+      <h2 id="form-title">Que bom ter você por aqui.</h2>
+      <p class="form-intro" id="form-intro">Deixe seu contato e conte um pouco sobre você. A equipe do Raízes que Curam vai te chamar com os próximos passos.</p>
+      <div class="form-grid">
+        <label class="field field--full">Como você quer participar?
+          <select name="interesse" id="f-interesse" required>
+            <option value="Quero aprender">Quero aprender</option>
+            <option value="Rede de Agentes — já trabalho com plantas medicinais">Já trabalho com plantas medicinais (Rede de Agentes)</option>
+            <option value="Quero ser Multiplicador">Quero ser Multiplicador</option>
+            <option value="Oficina Farmácia Viva">Oficina presencial Farmácia Viva</option>
+            <option value="Festival — quero participar">Festival online — quero participar</option>
+            <option value="Festival — quero propor uma atividade">Festival online — quero propor uma atividade</option>
+            <option value="Parceria e apoio">Quero apoiar o projeto / parceria</option>
+            <option value="Contato geral">Outro assunto</option>
+          </select>
+        </label>
+        <label class="field">Nome<input name="name" autocomplete="name" required maxlength="120" /></label>
+        <label class="field">E-mail<input name="email" type="email" autocomplete="email" required maxlength="160" /></label>
+        <label class="field">WhatsApp <span class="opt">(opcional)</span><input name="phone" type="tel" autocomplete="tel" maxlength="40" /></label>
+        <label class="field">Cidade / UF<input name="cidade" autocomplete="address-level2" maxlength="120" /></label>
+        <label class="field field--full" id="f-org-wrap" hidden>Organização / iniciativa <span class="opt">(opcional)</span><input name="organizacao" maxlength="160" /></label>
+        <label class="field field--full"><span id="f-msg-label">Quer contar algo mais?</span> <span class="opt">(opcional)</span><textarea name="message" rows="3" maxlength="2000"></textarea></label>
+        <label class="consent field--full"><input type="checkbox" name="consentimento" required /> <span>Concordo que o Raízes que Curam guarde estes dados para entrar em contato comigo sobre esta iniciativa, conforme a <a href="/privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</span></label>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
       </div>
-      <div class="territorio">
-        <span class="loc">Marechal Floriano</span>
-        <h3>Instituto Ibietê</h3>
-        <p>Segundo polo territorial, com apoio socioambiental, reflorestamento e regeneração de território.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      <button class="btn btn-terra btn-lg form-submit" type="submit">Enviar <span aria-hidden="true">→</span></button>
+    </form>
+  </dialog>
 
-<section class="cta" id="contato">
-  <div class="wrap">
-    <div class="eyebrow" style="color:#B8CBB0">Em construção</div>
-    <h2>Estamos plantando esta página</h2>
-    <p>O Raízes que Curam está em fase de estruturação — hortos, formação de multiplicadoras e festival online em preparação. Em breve, novidades por aqui.</p>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="brand-small">Raízes que Curam</div>
-    <div class="fine">Um projeto ShivaShakti Práticas Integrativas, em parceria com Instituto Ibietê, Jardim do Ser e Portal Matriarquia.</div>
-    <div class="fine">© 2026 Raízes que Curam</div>
-  </div>
-</footer>
-
+  <script src="/js/site.js?v=1" defer></script>
 </body>
 </html>
