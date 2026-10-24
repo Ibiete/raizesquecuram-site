@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "assets": "node scripts/assets.mjs"
+    "assets": "node scripts/assets.mjs",
+    "build": "node scripts/build.mjs"
   },
   "devDependencies": {
     "sharp": "^0.34.0"

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Gerado por scripts/build.mjs a partir de src/ — não editar aqui -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -7,11 +8,29 @@
   <meta name="robots" content="noindex" />
   <link rel="icon" href="/assets/favicon.png" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:wght@400;600&display=swap" />
-  <link rel="stylesheet" href="/css/site.css?v=1" />
+  <link rel="stylesheet" href="/css/site.css?v=2" />
   <style>.legal{padding:60px 0 90px}.legal .wrap{max-width:760px}.legal h1{font-family:var(--serif);color:var(--brown);font-size:clamp(34px,4vw,48px);line-height:1.1;margin:0 0 10px}.legal h2{font-family:var(--serif);color:var(--green);font-size:25px;margin:34px 0 8px}.legal p,.legal li{font-size:19px}.legal .note{font-style:italic;color:var(--muted)}</style>
 </head>
 <body>
-  <header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="Raízes que Curam — início"><img src="/assets/logo.webp" alt="Raízes que Curam" width="640" height="253" /></a><nav class="main-nav" style="display:flex"><a href="/">← Voltar para o início</a></nav></div></header>
+  <header class="site-header" id="topo">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Raízes que Curam — início">
+        <img src="/assets/logo.webp" alt="Raízes que Curam" width="640" height="253" />
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="menu-principal" aria-label="Navegação principal">
+        <a href="/raizes-que-curam/" data-nav="raizes-que-curam">Raízes que Curam</a>
+        <a href="/#rede">Rede de Agentes</a>
+        <a href="/#aprender">Aprender</a>
+        <a href="/#multiplicar">Multiplicar</a>
+        <a href="/#festival">Festival</a>
+        <a href="/#faca-parte">Faça Parte</a>
+        <button class="btn btn-forest btn-sm" type="button" data-form="geral">Participar</button>
+      </nav>
+    </div>
+  </header>
   <main class="legal"><div class="wrap">
     <h1>Política de privacidade</h1>
     <p class="note">Texto-base em revisão pela equipe do projeto. Última atualização: outubro de 2026.</p>
@@ -30,5 +49,85 @@
     <h2>Seus direitos</h2>
     <p>Você pode pedir a qualquer momento acesso, correção ou exclusão dos seus dados, ou deixar de receber contatos, pelo <a href="/#faca-parte">formulário de contato</a> do site (opção “Outro assunto”).</p>
   </div></main>
+  <footer class="site-footer" aria-labelledby="rodape-title">
+    <img class="deco deco-foot-esq" src="/assets/rodape-esq.webp" alt="" aria-hidden="true" loading="lazy" />
+    <img class="deco deco-foot-dir" src="/assets/rodape-dir.webp" alt="" aria-hidden="true" loading="lazy" />
+    <div class="wrap">
+      <div class="footer-top">
+        <p class="eyebrow eyebrow--gold eyebrow--center eyebrow--wide">Plantas · Pessoas · Territórios</p>
+        <h2 id="rodape-title" class="title title--xl title--center">O conhecimento <em>cria raízes</em> quando é compartilhado.</h2>
+        <p class="lead lead--center">Continue cultivando essa conexão com a gente.</p>
+        <img class="footer-divider" src="/assets/divisor-folha.webp" alt="" aria-hidden="true" loading="lazy" />
+      </div>
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <img src="/assets/logo-branca.webp" alt="Raízes que Curam — Plantas · Pessoas · Territórios" loading="lazy" width="560" height="529" />
+        </div>
+        <nav aria-label="Explore">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="/raizes-que-curam/">Raízes que Curam</a></li>
+            <li><a href="/#rede">Rede de Agentes</a></li>
+            <li><a href="/#aprender">Aprender</a></li>
+            <li><a href="/#multiplicar">Multiplicar</a></li>
+            <li><a href="/#festival">Festival</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Participe">
+          <h3>Participe</h3>
+          <ul>
+            <li><a href="/#faca-parte">Faça Parte</a></li>
+            <li><button type="button" data-form="parceria">Seja um parceiro</button></li>
+            <li><button type="button" data-form="contato">Entre em contato</button></li>
+          </ul>
+        </nav>
+        <div>
+          <h3>Contato</h3>
+          <p class="footer-contact">Fale com a equipe pelo formulário — respondemos por e-mail.</p>
+          <button class="btn btn-outline-gold btn-sm" type="button" data-form="contato">Enviar mensagem</button>
+        </div>
+      </div>
+      <img class="footer-roots" src="/assets/divisor-raiz.webp" alt="" aria-hidden="true" loading="lazy" />
+      <div class="footer-bottom">
+        <p>© Raízes que Curam · <span data-year>2026</span><br />Todos os direitos reservados.</p>
+        <p class="footer-legal"><a href="/privacidade.html">Privacidade</a></p>
+        <p class="footer-sign"><img src="/assets/ouro-broto.webp" alt="" aria-hidden="true" />Cuidar da terra.<br />Fortalecer quem cuida.<br />Multiplicar a cura.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Formulário de interesse (todos os CTAs abrem aqui, com o interesse pré-selecionado) -->
+  <dialog class="form-dialog" id="form-dialog" aria-labelledby="form-title">
+    <form class="interest-form" id="interest-form" novalidate>
+      <button class="form-close" type="button" aria-label="Fechar" data-close>×</button>
+      <p class="eyebrow" id="form-eyebrow">Faça parte</p>
+      <h2 id="form-title">Que bom ter você por aqui.</h2>
+      <p class="form-intro" id="form-intro">Deixe seu contato e conte um pouco sobre você. A equipe do Raízes que Curam vai te chamar com os próximos passos.</p>
+      <div class="form-grid">
+        <label class="field field--full">Como você quer participar?
+          <select name="interesse" id="f-interesse" required>
+            <option value="Quero aprender">Quero aprender</option>
+            <option value="Rede de Agentes — já trabalho com plantas medicinais">Já trabalho com plantas medicinais (Rede de Agentes)</option>
+            <option value="Quero ser Multiplicador">Quero ser Multiplicador</option>
+            <option value="Oficina Farmácia Viva">Oficina presencial Farmácia Viva</option>
+            <option value="Festival — quero participar">Festival online — quero participar</option>
+            <option value="Festival — quero propor uma atividade">Festival online — quero propor uma atividade</option>
+            <option value="Parceria e apoio">Quero apoiar o projeto / parceria</option>
+            <option value="Contato geral">Outro assunto</option>
+          </select>
+        </label>
+        <label class="field">Nome<input name="name" autocomplete="name" required maxlength="120" /></label>
+        <label class="field">E-mail<input name="email" type="email" autocomplete="email" required maxlength="160" /></label>
+        <label class="field">WhatsApp <span class="opt">(opcional)</span><input name="phone" type="tel" autocomplete="tel" maxlength="40" /></label>
+        <label class="field">Cidade / UF<input name="cidade" autocomplete="address-level2" maxlength="120" /></label>
+        <label class="field field--full" id="f-org-wrap" hidden>Organização / iniciativa <span class="opt">(opcional)</span><input name="organizacao" maxlength="160" /></label>
+        <label class="field field--full"><span id="f-msg-label">Quer contar algo mais?</span> <span class="opt">(opcional)</span><textarea name="message" rows="3" maxlength="2000"></textarea></label>
+        <label class="consent field--full"><input type="checkbox" name="consentimento" required /> <span>Concordo que o Raízes que Curam guarde estes dados para entrar em contato comigo sobre esta iniciativa, conforme a <a href="/privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</span></label>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      </div>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      <button class="btn btn-terra btn-lg form-submit" type="submit">Enviar <span aria-hidden="true">→</span></button>
+    </form>
+  </dialog>
+  <script src="/js/site.js?v=2" defer></script>
 </body>
 </html>

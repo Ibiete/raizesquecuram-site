@@ -1,0 +1,33 @@
+  <!-- Formulário de interesse (todos os CTAs abrem aqui, com o interesse pré-selecionado) -->
+  <dialog class="form-dialog" id="form-dialog" aria-labelledby="form-title">
+    <form class="interest-form" id="interest-form" novalidate>
+      <button class="form-close" type="button" aria-label="Fechar" data-close>×</button>
+      <p class="eyebrow" id="form-eyebrow">Faça parte</p>
+      <h2 id="form-title">Que bom ter você por aqui.</h2>
+      <p class="form-intro" id="form-intro">Deixe seu contato e conte um pouco sobre você. A equipe do Raízes que Curam vai te chamar com os próximos passos.</p>
+      <div class="form-grid">
+        <label class="field field--full">Como você quer participar?
+          <select name="interesse" id="f-interesse" required>
+            <option value="Quero aprender">Quero aprender</option>
+            <option value="Rede de Agentes — já trabalho com plantas medicinais">Já trabalho com plantas medicinais (Rede de Agentes)</option>
+            <option value="Quero ser Multiplicador">Quero ser Multiplicador</option>
+            <option value="Oficina Farmácia Viva">Oficina presencial Farmácia Viva</option>
+            <option value="Festival — quero participar">Festival online — quero participar</option>
+            <option value="Festival — quero propor uma atividade">Festival online — quero propor uma atividade</option>
+            <option value="Parceria e apoio">Quero apoiar o projeto / parceria</option>
+            <option value="Contato geral">Outro assunto</option>
+          </select>
+        </label>
+        <label class="field">Nome<input name="name" autocomplete="name" required maxlength="120" /></label>
+        <label class="field">E-mail<input name="email" type="email" autocomplete="email" required maxlength="160" /></label>
+        <label class="field">WhatsApp <span class="opt">(opcional)</span><input name="phone" type="tel" autocomplete="tel" maxlength="40" /></label>
+        <label class="field">Cidade / UF<input name="cidade" autocomplete="address-level2" maxlength="120" /></label>
+        <label class="field field--full" id="f-org-wrap" hidden>Organização / iniciativa <span class="opt">(opcional)</span><input name="organizacao" maxlength="160" /></label>
+        <label class="field field--full"><span id="f-msg-label">Quer contar algo mais?</span> <span class="opt">(opcional)</span><textarea name="message" rows="3" maxlength="2000"></textarea></label>
+        <label class="consent field--full"><input type="checkbox" name="consentimento" required /> <span>Concordo que o Raízes que Curam guarde estes dados para entrar em contato comigo sobre esta iniciativa, conforme a <a href="/privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</span></label>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      </div>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      <button class="btn btn-terra btn-lg form-submit" type="submit">Enviar <span aria-hidden="true">→</span></button>
+    </form>
+  </dialog>

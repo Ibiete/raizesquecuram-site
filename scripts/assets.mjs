@@ -152,6 +152,22 @@ const jobs = [
   ['ouro-broto', D('11_39_32'), 90, { trim: true }],
 ];
 
+// página interna "Raízes que Curam" (pasta Drive 1aPqEU-VlXx2gpDCVbirEZ6SSP7Oj9ZWG)
+const SRC_INT = process.env.RQC_SRC_INT || path.join(os.homedir(), 'raizesquecuram/design-source-interna/Raizes_que_Curam_Pagina_Interna_Completa/raizes-que-curam/assets');
+const N = (f) => path.join(SRC_INT, f);
+jobs.push(
+  ['int-hero', N('hero-recorte.webp'), 1448, { q: 76 }],
+  ['int-hero-rect', N('hero.webp'), 1100, { q: 74 }],
+  ['int-observar', N('observar.webp'), 1100, { q: 74 }],
+  ['int-cultivar', N('cultivar.webp'), 1100, { q: 74 }],
+  ['int-trocar', N('trocar.webp'), 1100, { q: 74 }],
+  ['int-trocar-recorte', N('trocar-recorte.webp'), 1300, { trim: true, q: 76 }],
+  ['int-agente', N('agente.webp'), 800, { q: 74 }],
+  ['int-multiplicador', N('multiplicador.webp'), 800, { q: 74 }],
+  ['int-alecrim', N('alecrim.png'), 520, { trim: true }],
+  ['int-camomila', N('camomila.png'), 520, { trim: true }],
+);
+
 let total = 0;
 for (const [name, src, width, opt = {}] of jobs) {
   let img = sharp(src);
