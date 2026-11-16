@@ -7,7 +7,7 @@ import path from 'node:path';
 const root = path.resolve('.');
 const partial = (n) => fs.readFileSync(path.join(root, 'src/partials', `${n}.html`), 'utf8').replace(/\n$/, '');
 const parts = { header: partial('header'), footer: partial('footer'), 'form-dialog': partial('form-dialog') };
-const ASSET_VERSION = process.env.ASSET_VERSION || '2';
+const ASSET_VERSION = process.env.ASSET_VERSION || '3';
 
 for (const file of fs.readdirSync(path.join(root, 'src/pages'))) {
   const name = file.replace(/\.html$/, '');
